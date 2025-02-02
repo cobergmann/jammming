@@ -9,16 +9,22 @@ function Login() {
   const [token, setToken] = useState('');
 
   useEffect(() => {
-    // Extract token from URL after redirect
-    const hash = window.location.hash;
-    if (hash) {
-      const tokenFromUrl = new URLSearchParams(hash.replace('#', '?')).get(
-        'access_token'
-      );
-      if (tokenFromUrl) {
-        setToken(tokenFromUrl);
-        localStorage.setItem('spotifyToken', tokenFromUrl); // Store token for later use
-        window.location.hash = ''; // Clean URL
+    // Check for token in localStorage
+    const storedToken = localStorage.getItem('spotifyToken');
+    if (storedToken) {
+      setToken(storedToken);
+    } else {
+      // Extract token from URL after redirect
+      const hash = window.location.hash;
+      if (hash) {
+        const tokenFromUrl = new URLSearchParams(hash.replace('#', '?')).get(
+          'access_token'
+        );
+        if (tokenFromUrl) {
+          setToken(tokenFromUrl);
+          localStorage.setItem('spotifyToken', tokenFromUrl); // Store token for later use
+          window.location.hash = ''; // Clean URL
+        }
       }
     }
   }, []);
