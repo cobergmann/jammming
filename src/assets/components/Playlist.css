@@ -1,0 +1,91 @@
+/* Playlist Container - Matches Search Results */
+.playlist-container {
+  background-color: #121212; /* Same as search results */
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+
+/* Playlist Name Input */
+.playlist-container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #1db954;
+  border-radius: 5px;
+  background: #282828;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Song List */
+.playlist-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Song Row - Uses same layout as search results */
+.playlist-container li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid #333;
+}
+
+/* Song Title */
+.song-title {
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+}
+
+/* Artist and Album Info */
+.song-details {
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+/* Align Buttons */
+.track-buttons {
+  display: flex;
+  gap: 10px;
+  min-width: 140px;
+}
+
+/* Remove Button */
+button.remove {
+  background-color: #d9534f;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button.remove:hover {
+  background-color: #c9302c;
+}
+
+/* Save to Spotify Button */
+button.save-button {
+  background-color: #1db954;
+  color: black;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  width: 100%;
+}
+
+button.save-button:hover {
+  background-color: #1ed760;
+}

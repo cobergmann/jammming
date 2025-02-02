@@ -1,4 +1,5 @@
 import React from 'react';
+import './searchResults.css';
 
 function SearchResults({
   searchResults,
@@ -7,37 +8,43 @@ function SearchResults({
   onRemoveFromPlaylist,
 }) {
   return (
-    <div>
+    <div className="search-results">
       <h2>Search Results</h2>
       {searchResults.length > 0 ? (
         <ul>
-          {searchResults.map((result, index) => (
-            <li key={index}>
-              <h4>{result.single}</h4>
-              <p>
-                by <strong>{result.artist}</strong> from the album{' '}
-                <em>{result.album}</em>
-              </p>
-              {playlist.some((item) => item.id === result.id) ? (
-                <button type="button" disabled>
-                  Added
-                </button>
-              ) : (
-                <button type="button" onClick={() => onAddToPlaylist(result)}>
-                  Add to playlist
-                </button>
-              )}
-              <button
-                type="button"
-                onClick={() => onRemoveFromPlaylist(result)}
-              >
-                Remove from playlist
-              </button>
+          {searchResults.map((track, index) => (
+            <li key={index} className="track-item">
+              <div className="track-details">
+                <span className="song-title">{track.single}</span>
+                <span className="song-details">
+                  by <strong>{track.artist}</strong> from the album{' '}
+                  <em>{track.album}</em>
+                </span>
+              </div>
+              <div className="track-buttons">
+                {playlist.some(
+                  (playlistTrack) => playlistTrack.id === track.id
+                ) ? (
+                  <button
+                    className="btn added"
+                    onClick={() => onRemoveFromPlaylist(track)}
+                  >
+                    Remove from playlist
+                  </button>
+                ) : (
+                  <button
+                    className="btn add"
+                    onClick={() => onAddToPlaylist(track)}
+                  >
+                    Add to playlist
+                  </button>
+                )}
+              </div>
             </li>
           ))}
         </ul>
       ) : (
-        <p>No results found</p>
+        <p className="no-results">No results found</p>
       )}
     </div>
   );

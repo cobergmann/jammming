@@ -1,0 +1,26 @@
+/* General Layout */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Reusable Button Styles */
+button {
+  flex: 1;
+  padding: 8px;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+button.remove {
+  background-color: #d9534f;
+  color: white;
+}
+
+button.remove:hover {
+  background-color: #c9302c;
+}

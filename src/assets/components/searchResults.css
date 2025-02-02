@@ -1,0 +1,78 @@
+/* Dark Spotify Background */
+.search-results {
+  background-color: #121212;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* List structure */
+.search-results ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+/* Song Row */
+.search-results li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid #333; /* Darker border */
+}
+
+/* Song Title */
+.song-single {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff; /* White */
+  display: block;
+}
+
+/* Artist and Album Info */
+.song-details {
+  font-size: 14px;
+  color: #b3b3b3; /* Spotify Light Grey */
+}
+
+/* Align buttons in a fixed column */
+.track-buttons {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 5px;
+  min-width: 140px;
+}
+
+/* Add to Playlist Button */
+button.add {
+  background-color: #1db954; /* Spotify Green */
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button.add:hover {
+  background-color: #1ed760; /* Slightly lighter green */
+}
+
+/* Remove from Playlist Button */
+button.remove {
+  background-color: #d9534f; /* Red */
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button.remove:hover {
+  background-color: #c9302c;
+}

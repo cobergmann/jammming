@@ -3,6 +3,8 @@ import SearchBar from './assets/components/SearchBar';
 import SearchResults from './assets/components/SearchResults';
 import Playlist from './assets/components/Playlist';
 import Login from './assets/components/Login';
+import './styles.css';
+import './App.css';
 
 const SEARCH_URL = 'https://api.spotify.com/v1/search';
 const REQUEST_TYPE = 'track';
@@ -151,16 +153,21 @@ function App() {
   };
 
   return (
-    <>
-      <div>
+    <div className="app-container">
+      <header className="app-header">
+        <h1>Conrad's Playlist Creator</h1>
         <Login />
-        <SearchBar onSearch={onSearch} />
-        <SearchResults
-          searchResults={searchResults}
-          playlist={playlist}
-          onAddToPlaylist={onAddToPlaylist}
-          onRemoveFromPlaylist={onRemoveFromPlaylist}
-        />
+      </header>
+      <main className="app-main">
+        <div className="search-container">
+          <SearchBar onSearch={onSearch} />
+          <SearchResults
+            searchResults={searchResults}
+            playlist={playlist}
+            onAddToPlaylist={onAddToPlaylist}
+            onRemoveFromPlaylist={onRemoveFromPlaylist}
+          />
+        </div>
         <Playlist
           playlistName={playlistName}
           setPlaylistName={setPlaylistName}
@@ -168,8 +175,11 @@ function App() {
           onRemoveFromPlaylist={onRemoveFromPlaylist}
           handleSaveToSpotify={handleSaveToSpotify}
         />
-      </div>
-    </>
+      </main>
+      <footer className="app-footer">
+        <p>Created by Conrad</p>
+      </footer>
+    </div>
   );
 }
 

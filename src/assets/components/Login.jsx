@@ -40,7 +40,6 @@ function Login() {
 
   return (
     <div>
-      <h1>Spotify Playlist App</h1>
       {!token ? (
         <button onClick={handleLogin}>Log in with Spotify</button>
       ) : (
