@@ -25,3 +25,4 @@ dist-ssr
 
 # What Deepseek told me
 .env
+.vercel

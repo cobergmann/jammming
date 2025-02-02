@@ -152,30 +152,36 @@ function App() {
     }
   };
 
+  const token = localStorage.getItem('spotifyToken');
+
   return (
     <div className="app-container">
       <header className="app-header">
         <h1>Conrad's Playlist Creator</h1>
         <Login />
       </header>
-      <main className="app-main">
-        <div className="search-container">
-          <SearchBar onSearch={onSearch} />
-          <SearchResults
-            searchResults={searchResults}
+      {token ? (
+        <main className="app-main">
+          <div className="search-container">
+            <SearchBar onSearch={onSearch} />
+            <SearchResults
+              searchResults={searchResults}
+              playlist={playlist}
+              onAddToPlaylist={onAddToPlaylist}
+              onRemoveFromPlaylist={onRemoveFromPlaylist}
+            />
+          </div>
+          <Playlist
+            playlistName={playlistName}
+            setPlaylistName={setPlaylistName}
             playlist={playlist}
-            onAddToPlaylist={onAddToPlaylist}
             onRemoveFromPlaylist={onRemoveFromPlaylist}
+            handleSaveToSpotify={handleSaveToSpotify}
           />
-        </div>
-        <Playlist
-          playlistName={playlistName}
-          setPlaylistName={setPlaylistName}
-          playlist={playlist}
-          onRemoveFromPlaylist={onRemoveFromPlaylist}
-          handleSaveToSpotify={handleSaveToSpotify}
-        />
-      </main>
+        </main>
+      ) : (
+        <p>Please log in to create a playlist.</p>
+      )}
       <footer className="app-footer">
         <p>Created by Conrad</p>
       </footer>
