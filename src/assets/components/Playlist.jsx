@@ -32,8 +32,12 @@ function Playlist({
           onKeyDown={handleKeyPress}
         />
       ) : (
-        <h2 className="playlist-name" onClick={() => setIsEditing(true)}>
-          {playlistName}
+        <h2
+          className="playlist-name"
+          onClick={() => setIsEditing(true)}
+          title="Click to edit"
+        >
+          {playlistName || <em>Click to name your playlist</em>}
         </h2>
       )}
       {playlist.length > 0 ? (
@@ -63,7 +67,7 @@ function Playlist({
       <button
         type="button"
         className="save-to-spotify-button"
-        disabled={playlist.length === 0}
+        disabled={playlist.length === 0 || !playlistName}
         onClick={handleSaveToSpotify}
       >
         Save to Spotify

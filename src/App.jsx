@@ -53,7 +53,7 @@ function App() {
       });
   };
 
-  const [playlistName, setPlaylistName] = useState('Conrad beste');
+  const [playlistName, setPlaylistName] = useState('');
   const [playlist, setPlaylist] = useState([]);
   const onAddToPlaylist = (track) => {
     if (playlist.some((item) => item.id === track.id)) {
