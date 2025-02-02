@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 
 import SearchBar from './assets/components/SearchBar';
 import SearchResults from './assets/components/SearchResults';
@@ -186,6 +187,7 @@ function App() {
       <footer className="app-footer">
         <p>Created by Conrad</p>
       </footer>
+      <Analytics />
     </div>
   );
 }
