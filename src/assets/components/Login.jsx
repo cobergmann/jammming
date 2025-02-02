@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 const CLIENT_ID = '662b96fda5444781a6ed71144223bd9b';
-const REDIRECT_URI = 'http://localhost:5173/';
+const REDIRECT_URI =
+  window.location.hostname === 'localhost'
+    ? 'http://localhost:5173/'
+    : 'https://jamming-self.vercel.app/';
 const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize';
 const RESPONSE_TYPE = 'token';
 
