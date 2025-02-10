@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 
-import SearchBar from './assets/components/SearchBar';
-import SearchResults from './assets/components/SearchResults';
-import Playlist from './assets/components/Playlist';
-import Login from './assets/components/Login';
+import SearchBar from './components/SearchBar';
+import SearchResults from './components/SearchResults';
+import Playlist from './components/Playlist';
+import Login from './components/Login';
 import './styles.css';
 import './App.css';
 
